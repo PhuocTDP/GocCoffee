@@ -5,26 +5,46 @@
 			<!-- Topbar -->
 			<div class="top-bar">
 				<div class="content-topbar flex-sb-m h-full container">
-					<div class="left-top-bar">
+					<div class="left-top-bar" th:text="#{cau1}">
 						Free shipping for standard order over $100
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
+						<a href="#" class="flex-c-m trans-04 p-lr-25" th:text="#{Help&FAQs}">
+							Help & FAQs 
 						</a>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
+						<a href="#" class="flex-c-m trans-04 p-lr-25" th:text="#{MyAccount}">
 							My Account
 						</a>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
+						<!-- <a href="#" class="flex-c-m trans-04 p-lr-25">
 							EN
-						</a>
+						</a> -->
+						
+			
+																		
+								<a onclick="changeLanguage('vi')">
+										<img src="\assets\images\icons\fontlogo3.jpg.png" th:text="#{nav.vi}" ></a>
+									<a onclick="changeLanguage('en')">
+										<img src="\assets\images\icons\fontlogo.jpg"  th:text="#{nav.en}"></a>
+						
 
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							USD
 						</a>
+						
+						
+						<script>
+					  function changeLanguage(lang) {
+						$.ajax({
+						  url: "/home/index?lang=" + lang
+						}).then(resp => {
+						  location.reload();
+						});
+					  }
+					  </script>
+					  
 					</div>
 				</div>
 			</div>
@@ -41,7 +61,7 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li class="active-menu">
-								<a th:href="@{/}">Home</a>
+								<a th:text="#{menu.home}">Home</a>
 							</li>
 							<th:block th:if="${#request.remoteUser}">
 								<li class="scroll-to-section"
@@ -58,17 +78,17 @@
 
 							<th:block th:unless="${#request.remoteUser}">
 								<li class="active-menu">
-									<a th:href="@{/product/list}">Products</a>
+									<a th:href="@{/product/list}" th:text="#{menu.product}">Products</a>
 									<ul class="sub-menu">
 										<li th:each="c: ${cates}"><a
 												th:href="@{|/product/list?cid=${c.id}|}">[[${c.name}]]'s</a></li>
 									</ul>
 								</li>
 								<li class="active-menu">
-									<a th:href="@{/security/login/form}">Sign in</a>
+									<a th:href="@{/security/login/form}" th:text="#{login.Signin}">Sign in</a>
 									<ul class="sub-menu">
-										<li><a th:href="@{/security/register}">Register</a></li>
-										<li><a th:href="@{/security/forgot-password}">Forgot-password</a></li>
+										<li><a th:href="@{/security/register}" th:text="#{login.Register}">Register</a></li>
+										<li><a th:href="@{/security/forgot-password}" th:text="#{login.Forgot-password}">Forgot-password</a></li>
 
 									</ul>
 								</li>
