@@ -63,7 +63,7 @@ app.controller("order-ctrl", function ($scope, $http) {
             $(".nav-tabs a:eq(1)").tab('show');
 
         }).catch(error => {
-            alert("Có Lỗi  !");
+            alert("Có Lỗi !");
             console.log("Error", error);
         });
     }

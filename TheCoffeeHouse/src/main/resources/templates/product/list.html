@@ -10,7 +10,7 @@
                 <div class="flex-w flex-sb-m p-b-52">
                     <div class="flex-w flex-l-m filter-tope-group m-tb-10">
                         <a th:href="@{/product/list}" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1"
-                            data-filter="*">
+                            data-filter="*" th:text="#{Product.AllProduct}">
                             All Products
                         </a>
                         <a th:each="c: ${cates}" th:href="@{|/product/list?cid=${c.id}|}"
@@ -20,15 +20,15 @@
                     </div>
 
                     <div class="flex-w flex-c-m m-tb-10">
-                        <div
-                            class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
+                        <div th:text="#{Product.Filter}"
+                            class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter" >
                             <i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
                             <i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
                             Filter
                         </div>
 
-                        <div
-                            class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
+                        <div th:text="#{Product.Search}"
+                            class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search" >
                             <i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
                             <i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
                             Search
@@ -54,43 +54,43 @@
                     <div class="dis-none panel-filter w-full p-t-10">
                         <div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
                             <div class="filter-col1 p-r-15 p-b-27">
-                                <div class="mtext-102 cl2 p-b-15">
+                                <div class="mtext-102 cl2 p-b-15" th:text="#{Filter.SortBy}">
                                     Sort By
                                 </div>
 
                                 <ul>
                                     <li class="p-b-6">
-                                        <a href="#" class="filter-link stext-106 trans-04">
+                                        <a href="#" class="filter-link stext-106 trans-04" th:text="#{Filter.Default}">
                                             Default
                                         </a>
                                     </li>
 
                                     <li class="p-b-6">
-                                        <a href="#" class="filter-link stext-106 trans-04">
+                                        <a href="#" class="filter-link stext-106 trans-04" th:text="#{Filter.Popularity}">
                                             Popularity
                                         </a>
                                     </li>
 
                                     <li class="p-b-6">
-                                        <a href="#" class="filter-link stext-106 trans-04">
+                                        <a href="#" class="filter-link stext-106 trans-04" th:text="#{Filter.Averagerating}">
                                             Average rating
                                         </a>
                                     </li>
 
                                     <li class="p-b-6">
-                                        <a href="#" class="filter-link stext-106 trans-04 filter-link-active">
+                                        <a href="#" class="filter-link stext-106 trans-04 filter-link-active" th:text="#{Filter.Newness}">
                                             Newness
                                         </a>
                                     </li>
 
                                     <li class="p-b-6">
-                                        <a href="#" class="filter-link stext-106 trans-04">
+                                        <a href="#" class="filter-link stext-106 trans-04" th:text="#{Filter.PriceLowtoHigh}">
                                             Price: Low to High
                                         </a>
                                     </li>
 
                                     <li class="p-b-6">
-                                        <a href="#" class="filter-link stext-106 trans-04">
+                                        <a href="#" class="filter-link stext-106 trans-04" th:text="#{Filter.PriceHightoLow}">
                                             Price: High to Low
                                         </a>
                                     </li>
@@ -98,14 +98,14 @@
                             </div>
 
                             <div class="filter-col2 p-r-15 p-b-27">
-                                <div class="mtext-102 cl2 p-b-15">
+                                <div class="mtext-102 cl2 p-b-15" th:text="#{Filter.Price}"> 
                                     Price
                                 </div>
 
                                 <ul>
                                     <li class="p-b-6">
                                         <a th:href="@{/product/list}"
-                                            class="filter-link stext-106 trans-04 filter-link-active">
+                                            class="filter-link stext-106 trans-04 filter-link-active" th:text="#{Filter.All}">
                                             All
                                         </a>
                                     </li>
@@ -128,7 +128,7 @@
                             </div>
 
                             <div class="filter-col4 p-b-27">
-                                <div class="mtext-102 cl2 p-b-15">
+                                <div class="mtext-102 cl2 p-b-15" th:text="#{Filter.Tags}">
                                     Tags
                                 </div>
 
