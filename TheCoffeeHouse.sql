@@ -28,6 +28,8 @@ CREATE TABLE Orders(
 	Username nvarchar(50),
 	CreateDate datetime,
 	Address nvarchar(100),
+	Phone INT,
+	Action nvarchar(45),
     FOREIGN KEY (Username) REFERENCES Accounts (Username)
     );
 
